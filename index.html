@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Evita Falta de diseño responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Pro | Gestor de Tareas</title>
+    <!-- Importamos una fuente moderna de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>TaskMaster Pro</h1>
+            <p>Gestiona tus proyectos de forma visual y profesional</p>
+        </header>
+
+        <main>
+            <!-- Formulario CRUD (Create) -->
+            <section class="form-section">
+                <form id="formulario-tarea">
+                    <div class="input-group">
+                        <input type="text" id="nueva-tarea" placeholder="¿Qué necesitas hacer hoy?" autocomplete="off">
+                        <div class="file-input-wrapper">
+                            <label for="imagen-tarea" class="btn-file">📷 Añadir Imagen</label>
+                            <input type="file" id="imagen-tarea" accept="image/*">
+                        </div>
+                        <button type="submit" id="agregar-tarea">Agregar</button>
+                    </div>
+                    <!-- Vista previa de la imagen seleccionada -->
+                    <div id="preview-container" class="preview-container hidden">
+                        <img id="imagen-preview" src="" alt="Vista previa de la tarea">
+                        <button type="button" id="quitar-imagen" class="btn-quitar">✖</button>
+                    </div>
+                    <p id="mensaje-error" class="error hidden">Por favor, escribe un título para la tarea.</p>
+                </form>
+            </section>
+
+            <!-- Lista de Tareas (Read) -->
+            <section class="tasks-section">
+                <ul id="lista-tareas">
+                    <!-- Las tareas se inyectan aquí -->
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!--  Enlazamos el script con 'defer' -->
+    <script src="app.js" defer></script>
+</body>
+</html>
